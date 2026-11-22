@@ -34,16 +34,6 @@ with st.expander("Column Names & Data Types"):
     )
     st.dataframe(dtypes_df, use_container_width=True)
 
-n_rows = st.slider("Number of rows to preview", min_value=1, max_value=20, value=5)
-st.subheader(f"First {n_rows} Rows (`head`)")
-st.dataframe(df.head(n_rows), use_container_width=True)
-
-st.subheader(f"Last {n_rows} Rows (`tail`)")
-st.dataframe(df.tail(n_rows), use_container_width=True)
-
-st.subheader("Summary Statistics (`describe().T`)")
-st.dataframe(df.describe().T, use_container_width=True)
-
 
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
