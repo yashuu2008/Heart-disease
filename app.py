@@ -45,6 +45,9 @@ st.subheader("Summary Statistics (`describe().T`)")
 st.dataframe(df.describe().T, use_container_width=True)
 
 
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import StandardScaler
 
 st.header("Heart Disease Prediction")
 
