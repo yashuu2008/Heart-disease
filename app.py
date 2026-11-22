@@ -44,26 +44,7 @@ st.dataframe(df.tail(n_rows), use_container_width=True)
 st.subheader("Summary Statistics (`describe().T`)")
 st.dataframe(df.describe().T, use_container_width=True)
 
-# Data Visualization
-st.header("Data Visualization")
 
-st.subheader("Target Distribution (`countplot`)")
-fig_count, ax_count = plt.subplots(figsize=(6, 4))
-sns.countplot(x="target", data=df, ax=ax_count)
-ax_count.set_xlabel("Target")
-ax_count.set_ylabel("Count")
-st.pyplot(fig_count)
-plt.close(fig_count)
-
-st.subheader("Histograms for All Features")
-fig_hist, ax_hist = plt.subplots(figsize=(15, 15))
-df.hist(ax=ax_hist)
-st.pyplot(fig_hist)
-plt.close(fig_hist)
-
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
 
 st.header("Heart Disease Prediction")
 
